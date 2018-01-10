@@ -7,7 +7,7 @@ fhand = open(username + ".txt", "r")
 text = fhand.read()
 
 while True:
-    n = input("Enter a command (for quick entry use -p):")
+    n = input("Enter a command (for quick entry use -p.)(-help for usage instructions):")
     if n == "new entry":
         add = str(input("Please write the items name and value:)"))
         if len(add) > 2:  # length needs to be at least 3.
@@ -20,6 +20,10 @@ while True:
             output_file.write(n[3:] + " \n")
             print("Added.")
             output_file.close()
+    elif n.startswith("-help"):
+            fhand2 = open("help.txt", "r")
+            help = fhand2.read()
+            print(help)
     elif n == "report":
         report = open("output.txt", "r")
         final = report.read()
