@@ -15,6 +15,11 @@ while True:
             output_file.write(add + " \n")
             print("Added.")
             output_file.close()
+    elif n.startswith("-p"):
+            output_file = open("output.txt", "a")
+            output_file.write(n[3:] + " \n")
+            print("Added.")
+            output_file.close()
     elif n == "report":
         report = open("output.txt", "r")
         final = report.read()

@@ -1,2 +1,2 @@
-boots 200 
-yay 300 
+jacket 300 
+jeans 500 
