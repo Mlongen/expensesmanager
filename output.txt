@@ -1,2 +1,2 @@
-jacket 300 
-jeans 500 
+Name: jeans 300 01/11/18 
+Name: jeans 300 01/11/18 
