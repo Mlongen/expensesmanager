@@ -1,7 +1,7 @@
 import time
 
 
-username = input("Enter an username:") # I will insert try and except to safeguard a wrong username(I had this already but removed for a few reasons)
+username = input("Enter an username:")
 
 fhand = open(username + ".txt", "r")
 text = fhand.read()
@@ -27,7 +27,15 @@ while True:
     elif n == "report":
         report = open("output.txt", "r")
         final = report.read()
+        words = final.split()
+        l = []
+        for word in words:
+            if word[0].isdigit() and word[2] != "/":
+                l.append(int(word))
+
+        print(words)
         print(final)
+        print("Total spent: CAD ", sum(l))
 
 
 
