@@ -10,5 +10,6 @@ List of commands:
 
 
 new entry        Add new expense, user should write first the name of the item, then price. (Ex. Jeans 400)
+erase            Delete all records
    -p            Method for adding a new entry in a quick manner. User should first the name of the item, then price. (Ex:-p jeans 300)
 

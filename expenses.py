@@ -11,12 +11,12 @@ try:
         if n == "new entry":
             add = str(input("Please write the items name and value:)"))
             if len(add) > 2:  # length needs to be at least 3.
-                output_file = open("output.txt", "a")
+                output_file = open("output" + username +".txt", "a")
                 output_file.write("Name: " + add + " " + now +" \n")
                 print("Added.")
                 output_file.close()
         elif n.startswith("-p"):
-                output_file = open("output.txt", "a")
+                output_file = open("output" + username +".txt", "a")
                 output_file.write("Name: " + n[3:] + " " + now +" \n")
                 print("Added.")
                 output_file.close()
@@ -24,8 +24,19 @@ try:
                 fhand2 = open("help.txt", "r")
                 help = fhand2.read()
                 print(help)
+        elif n.startswith("reset"):
+                confirmation = input("Are you sure? Y/N  ")
+                if confirmation == "y":
+                    output_file = open("output" + username +".txt", "w")
+                    output_file.write("")
+                    print("Done.")
+                    output_file.close()
+                else:
+                    pass
+        elif n.startswith("exit"):
+            raise SystemExit
         elif n == "report":
-            report = open("output.txt", "r")
+            report = open("output" + username +".txt", "r")
             final = report.read()
             capitalized = final.title()
             words = final.split()
@@ -38,7 +49,7 @@ try:
             print("Total spent: CAD ", sum(l))
 
 except:
-    print("Invalid username. Terminating")
+    print("Terminating")
     raise SystemExit
 
 
